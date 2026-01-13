@@ -4,14 +4,12 @@ import MainStack from './MainStack';
 import OnboardingStack from './OnboardingStack';
 
 import { useGameContext } from 'src/hooks/useGameContext';
-import { RegistrationScreen } from 'src/screens';
 import type { RootStackParamList } from 'src/types';
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 const RootNavigator = () => {
-  const { isContextOnboardingCompleted, isContextRegistrationCompleted } =
-    useGameContext();
+  const { isContextOnboardingCompleted } = useGameContext();
   return (
     <RootStack.Navigator
       screenOptions={{
@@ -25,11 +23,6 @@ const RootNavigator = () => {
     >
       {!isContextOnboardingCompleted ? (
         <RootStack.Screen name="OnboardingStack" component={OnboardingStack} />
-      ) : !isContextRegistrationCompleted ? (
-        <RootStack.Screen
-          name="RegistrationScreen"
-          component={RegistrationScreen}
-        />
       ) : (
         <RootStack.Screen name="MainStack" component={MainStack} />
       )}

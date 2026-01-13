@@ -1,10 +1,20 @@
-import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import { GameBackground, GameContextProvider } from './components';
+import RootNavigator from './navigation/RootNavigator';
 
 function App() {
   return (
-    <View>
-      <Text>Travel Austria Moments</Text>
-    </View>
+    <GameContextProvider>
+      <GameBackground>
+        <SafeAreaProvider>
+          <NavigationContainer>
+            <RootNavigator />
+          </NavigationContainer>
+        </SafeAreaProvider>
+      </GameBackground>
+    </GameContextProvider>
   );
 }
 

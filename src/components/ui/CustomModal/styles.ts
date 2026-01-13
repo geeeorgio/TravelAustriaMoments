@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: COLORS.modalBackground,
+    backgroundColor: COLORS.liquidBckgd,
     paddingHorizontal: wp(20),
   },
   content: {
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: hp(24),
     borderRadius: wp(14),
-    backgroundColor: COLORS.greyBackground,
+    backgroundColor: COLORS.liquidBckgd,
   },
   textContainer: {
     width: '80%',
@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderTopColor: COLORS.greyBorder,
+    borderTopColor: COLORS.liquidBckgd,
     borderTopWidth: wp(1),
   },
   confirmButton: {
@@ -50,7 +50,7 @@ export const styles = StyleSheet.create({
   confirmButtonText: {
     fontFamily: FONTS.MontserratBold,
     fontSize: sp(14),
-    color: COLORS.blue,
+    color: COLORS.green,
     textAlign: 'center',
   },
   cancelButton: {
@@ -59,7 +59,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: hp(16),
     borderRightWidth: wp(1),
-    borderColor: COLORS.greyBorder,
+    borderColor: COLORS.liquidBckgd,
   },
   cancelButtonText: {
     fontFamily: FONTS.MontserratBold,

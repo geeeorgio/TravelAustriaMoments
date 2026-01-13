@@ -1,5 +1,6 @@
 import type { SvgProps } from 'react-native-svg';
 import Svg, { Path } from 'react-native-svg';
+
 import { COLORS } from 'src/constants';
 
 const LampIcon = (props: SvgProps) => {

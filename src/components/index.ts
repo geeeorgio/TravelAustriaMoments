@@ -12,6 +12,7 @@ import CustomModal from './ui/CustomModal/CustomModal';
 import CustomScreenWrapper from './ui/CustomScreenWrapper/CustomScreenWrapper';
 import CustomTabBar from './ui/CustomTabBar/CustomTabBar';
 import CustomText from './ui/CustomText/CustomText';
+import HomeMenu from './ui/HomeMenu/HomeMenu';
 
 export {
   CustomModal,
@@ -28,4 +29,5 @@ export {
   MarkIcon,
   ShareIcon,
   HomeIcon,
+  HomeMenu,
 };

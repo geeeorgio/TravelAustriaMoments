@@ -6,7 +6,6 @@ import type { OnboardingStackParamList } from './onbdNav';
 
 export type RootStackParamList = {
   OnboardingStack: NavigatorScreenParams<OnboardingStackParamList>;
-  RegistrationScreen: undefined;
   MainStack: NavigatorScreenParams<MainStackParamList>;
 };
 

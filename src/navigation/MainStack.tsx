@@ -1,12 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import HomeStack from './HomeStack';
+
 import { CustomTabBar } from 'src/components';
-import {
-  ExchangeScreen,
-  HistoryScreen,
-  HomeScreen,
-  ProfileScreen,
-} from 'src/screens';
+import { FavouriteScreen, TipsScreen } from 'src/screens';
 import type { MainStackParamList } from 'src/types';
 
 const MainNav = createBottomTabNavigator<MainStackParamList>();
@@ -22,23 +19,11 @@ const MainStack = () => {
         },
       }}
       tabBar={(props) => <CustomTabBar {...props} />}
+      initialRouteName="HomeStack"
     >
-      <MainNav.Screen name="HomeScreen" component={HomeScreen} />
-      <MainNav.Screen
-        name="HistoryScreen"
-        component={HistoryScreen}
-        options={{ title: 'History' }}
-      />
-      <MainNav.Screen
-        name="ExchangeScreen"
-        component={ExchangeScreen}
-        options={{ title: 'Exchanger' }}
-      />
-      <MainNav.Screen
-        name="ProfileScreen"
-        component={ProfileScreen}
-        options={{ title: 'Profile' }}
-      />
+      <MainNav.Screen name="TipsScreen" component={TipsScreen} />
+      <MainNav.Screen name="HomeStack" component={HomeStack} />
+      <MainNav.Screen name="FavouriteScreen" component={FavouriteScreen} />
     </MainNav.Navigator>
   );
 };

@@ -1,10 +1,12 @@
 import type { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import type { NavigatorScreenParams } from '@react-navigation/native';
+
+import type { HomeStackNavigationProp } from './homeNav';
 
 export type MainStackParamList = {
-  HomeScreen: undefined;
-  HistoryScreen: undefined;
-  ExchangeScreen: undefined;
-  ProfileScreen: undefined;
+  HomeStack: NavigatorScreenParams<HomeStackNavigationProp>;
+  FavouriteScreen: undefined;
+  TipsScreen: undefined;
 };
 
 export type MainStackNavigationProp =

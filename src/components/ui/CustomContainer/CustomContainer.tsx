@@ -8,13 +8,13 @@ import { styles } from './styles';
 interface CustomContainerProps {
   children: ReactNode;
   extraStyle?: StyleProp<ViewStyle>;
-  variant?: 'default' | 'brown' | 'yellow' | 'green' | 'grey' | 'onboarding';
+  variant?: 'default' | 'onboarding' | 'red';
 }
 
 const CustomContainer = ({
   children,
   extraStyle,
-  variant = 'brown',
+  variant = 'default',
 }: CustomContainerProps) => {
   return (
     <View style={[styles.default, styles[variant], extraStyle]}>
