@@ -23,8 +23,8 @@ export const styles = StyleSheet.create({
   button: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingVertical: wp(12),
-    paddingHorizontal: wp(18),
+    paddingVertical: wp(16),
+    paddingHorizontal: wp(20),
     borderRadius: wp(25),
     borderWidth: wp(1),
     borderColor: COLORS.white,
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.transparentBckgd,
   },
   icon: {
-    width: wp(30),
-    height: wp(30),
+    width: wp(26),
+    height: wp(26),
   },
 });

@@ -2,6 +2,8 @@ export const MAIN_BG_IMAGE = require('../assets/images/bckd/bckd.png');
 
 export const HOME_BG = require('../assets/images/bckd/menuBckg.png');
 
+export const TIPS_BG = require('../assets/images/bckd/tipsBg.png');
+
 export const ONBOARDING = {
   onbd1: require('../assets/images/onbd/onbd1.png'),
   onbd2: require('../assets/images/onbd/onbd2.png'),

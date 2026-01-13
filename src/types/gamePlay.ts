@@ -2,8 +2,30 @@ import type { ImageSourcePropType } from 'react-native';
 
 import type { LocationTypes, RouteTypes } from 'src/constants';
 
-export type LocationType = (typeof LocationTypes)[number];
-export type RouteType = (typeof RouteTypes)[number];
+export type LocationNameType = (typeof LocationTypes)[number];
+export type RouteNameType = (typeof RouteTypes)[number];
+
+export type LocationType = {
+  id: string;
+  title: string;
+  description: string;
+  location: string;
+  image?: ImageSourcePropType;
+};
+
+export type RouteType = {
+  id: string;
+  title: string;
+  description: string;
+  location: string;
+  image?: ImageSourcePropType;
+};
+
+export type TipType = {
+  id: string;
+  title: string;
+  description: string;
+};
 
 export type GameContextType = {
   contextBackground: ImageSourcePropType;

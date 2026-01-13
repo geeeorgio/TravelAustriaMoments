@@ -54,6 +54,10 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
     [favouritesList],
   );
 
+  const setCurrentTipContext = useCallback((tip: string) => {
+    setCurrentTip(tip);
+  }, []);
+
   const resetGameData = useCallback(async () => {}, []);
 
   const contextValue = useMemo(
@@ -73,6 +77,7 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
       addContextFavourites,
       removeFromContextFavourites,
       resetGameData,
+      ,
     ],
   );
 
