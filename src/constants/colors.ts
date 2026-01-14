@@ -9,6 +9,7 @@ export const COLORS = {
   liquidBckgd: 'rgba(255, 255, 255, 0.05)',
   lightBorder: 'rgba(255, 255, 255, 0.18)',
   lightDarkerBorder: 'rgba(0, 0, 0, 0.1)',
+  lightGrayBorder: 'rgba(255, 255, 255, 0.5)',
   tipsBckgd: 'rgba(26, 26, 21, 0.5);',
   blackBckgd: '#151515',
   greyBckg: '#292323',

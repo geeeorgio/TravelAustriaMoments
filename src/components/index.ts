@@ -18,6 +18,8 @@ import HomeMenu from './ui/HomeMenu/HomeMenu';
 import PlaceItem from './ui/PlaceItem/PlaceItem';
 import PlaceScrollItem from './ui/PlaceScrollItem/PlaceScrollItem';
 import PlacesList from './ui/PlacesList/PlacesList';
+import RouteActions from './ui/RouteActions/RouteActions';
+import RouteProgressIndicator from './ui/RouteProgressIndicator/RouteProgressIndicator';
 
 export {
   CustomModal,
@@ -40,4 +42,6 @@ export {
   PlaceItem,
   PlacesList,
   PlaceScrollItem,
+  RouteActions,
+  RouteProgressIndicator,
 };

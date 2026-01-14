@@ -10,19 +10,19 @@ export const styles = StyleSheet.create({
     borderColor: COLORS.white,
     alignItems: 'center',
     overflow: 'hidden',
-    borderRadius: wp(32),
+    borderRadius: wp(24),
     backgroundColor: COLORS.blackBckgd,
   },
   imageContainer: {
     width: '100%',
-    height: hp(160),
+    height: hp(140),
   },
   image: {
     width: '100%',
     height: '100%',
   },
   imageText: {
-    fontSize: sp(15),
+    fontSize: sp(14),
     fontFamily: FONTS.Ultra,
     position: 'absolute',
     bottom: 0,
@@ -35,8 +35,8 @@ export const styles = StyleSheet.create({
   content: {
     width: '100%',
     justifyContent: 'space-between',
-    padding: wp(16),
-    gap: hp(10),
+    padding: wp(12),
+    gap: hp(8),
   },
   title: {
     fontSize: sp(16),
@@ -63,10 +63,9 @@ export const styles = StyleSheet.create({
   },
   openBtn: {
     flex: 0.6,
-    paddingVertical: wp(10),
   },
   btnText: {
-    fontSize: sp(15),
+    fontSize: sp(14),
     fontFamily: FONTS.Ultra,
     letterSpacing: wp(1),
   },

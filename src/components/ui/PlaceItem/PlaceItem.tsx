@@ -27,7 +27,7 @@ const PlaceItem = ({ item, onOpenPress, onFavouritePress }: PlaceItemProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={item.image} style={styles.image} resizeMode="stretch" />
+        <Image source={item.image} style={styles.image} resizeMode="cover" />
         <CustomText extraStyle={styles.imageText}>{item.title}</CustomText>
       </View>
 
