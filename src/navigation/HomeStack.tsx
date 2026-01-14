@@ -4,6 +4,7 @@ import {
   HomeScreen,
   LocationsScreen,
   MapScreen,
+  PlaceDetailsScreen,
   RandomPlaceScreen,
   RoutesScreen,
 } from 'src/screens';
@@ -32,6 +33,10 @@ const HomeStack = () => {
       <HomeNav.Screen name="RoutesScreen" component={RoutesScreen} />
       <HomeNav.Screen name="MapScreen" component={MapScreen} />
       <HomeNav.Screen name="RandomPlaceScreen" component={RandomPlaceScreen} />
+      <HomeNav.Screen
+        name="PlaceDetailsScreen"
+        component={PlaceDetailsScreen}
+      />
     </HomeNav.Navigator>
   );
 };

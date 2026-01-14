@@ -81,6 +81,15 @@ const RoutesScreen = () => {
     navigation.navigate('RandomPlaceScreen');
   };
 
+  const handleOpenPress = (item: any) => {
+    navigation.navigate('PlaceDetailsScreen', { item });
+  };
+
+  const handleFavouritePress = (item: any) => {
+    // TODO: Add to favourites
+    console.log('Add to favourites:', item.id);
+  };
+
   const totalLocations = selectedLocation?.list.length || 0;
   const isLastIndex = currentIndex === totalLocations - 1;
   const isCurrentVisited = visitedIndices.has(currentIndex);
@@ -144,8 +153,8 @@ const RoutesScreen = () => {
             <PlacesList
               direction="horizontal"
               data={selectedLocation.list}
-              handleOpenPress={() => {}}
-              handleFavouritePress={() => {}}
+              handleOpenPress={handleOpenPress}
+              handleFavouritePress={handleFavouritePress}
               onScrollEnd={handleScrollEnd}
               listRef={flatListRef}
             />

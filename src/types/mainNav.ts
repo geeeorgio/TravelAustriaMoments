@@ -7,6 +7,7 @@ export type MainStackParamList = {
   HomeStack: NavigatorScreenParams<HomeStackParamsList>;
   FavouriteScreen: undefined;
   TipsScreen: undefined;
+  MapsScreen: undefined;
 };
 
 export type MainStackNavigationProp =

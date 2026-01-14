@@ -7,7 +7,7 @@ const { width: SCREEN_WIDTH } = Dimensions.get('window');
 export const styles = StyleSheet.create({
   contentContainer: {
     gap: wp(16),
-    paddingBottom: hp(100),
+    paddingBottom: hp(160),
   },
   list: {
     width: '100%',

@@ -15,6 +15,7 @@ import CustomScreenWrapper from './ui/CustomScreenWrapper/CustomScreenWrapper';
 import CustomTabBar from './ui/CustomTabBar/CustomTabBar';
 import CustomText from './ui/CustomText/CustomText';
 import HomeMenu from './ui/HomeMenu/HomeMenu';
+import MapComponent from './ui/MapComponent/MapComponent';
 import PlaceItem from './ui/PlaceItem/PlaceItem';
 import PlaceScrollItem from './ui/PlaceScrollItem/PlaceScrollItem';
 import PlacesList from './ui/PlacesList/PlacesList';
@@ -44,4 +45,5 @@ export {
   PlaceScrollItem,
   RouteActions,
   RouteProgressIndicator,
+  MapComponent,
 };

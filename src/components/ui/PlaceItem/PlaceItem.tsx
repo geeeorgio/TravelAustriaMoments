@@ -44,7 +44,7 @@ const PlaceItem = ({ item, onOpenPress, onFavouritePress }: PlaceItemProps) => {
         <View style={styles.btnsContainer}>
           <CustomButton
             variant="black"
-            onPress={() => {}}
+            onPress={() => onOpenPress(item)}
             extraStyle={styles.openBtn}
           >
             <CustomText extraStyle={styles.btnText}>Open</CustomText>
@@ -56,7 +56,10 @@ const PlaceItem = ({ item, onOpenPress, onFavouritePress }: PlaceItemProps) => {
             >
               <ShareIcon color={COLORS.white} width={wp(16)} height={wp(16)} />
             </CustomButton>
-            <CustomButton onPress={() => {}} extraStyle={styles.smallBtn}>
+            <CustomButton
+              onPress={() => onFavouritePress(item)}
+              extraStyle={styles.smallBtn}
+            >
               <LikeIcon color={COLORS.white} width={wp(16)} height={wp(16)} />
             </CustomButton>
           </View>

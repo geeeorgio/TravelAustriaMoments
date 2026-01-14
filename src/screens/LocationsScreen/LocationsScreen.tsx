@@ -28,6 +28,15 @@ const LocationsScreen = () => {
     setSelectedLocation(null);
   };
 
+  const handleOpenPress = (item: any) => {
+    navigation.navigate('PlaceDetailsScreen', { item });
+  };
+
+  const handleFavouritePress = (item: any) => {
+    // TODO: Add to favourites
+    console.log('Add to favourites:', item.id);
+  };
+
   return (
     <CustomScreenWrapper extraStyle={styles.container}>
       {selectedLocation ? (
@@ -44,8 +53,8 @@ const LocationsScreen = () => {
       {selectedLocation ? (
         <PlacesList
           data={selectedLocation.list}
-          handleOpenPress={() => {}}
-          handleFavouritePress={() => {}}
+          handleOpenPress={handleOpenPress}
+          handleFavouritePress={handleFavouritePress}
         />
       ) : (
         <ScrollView
