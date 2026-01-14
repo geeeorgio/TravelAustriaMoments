@@ -26,7 +26,6 @@ const RoutesScreen = () => {
 
   const handleBackPress = () => {
     setSelectedLocation(null);
-    navigation.navigate('RoutesScreen');
   };
 
   return (

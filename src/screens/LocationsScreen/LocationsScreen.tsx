@@ -26,7 +26,6 @@ const LocationsScreen = () => {
 
   const handleBackPress = () => {
     setSelectedLocation(null);
-    navigation.navigate('LocationsScreen');
   };
 
   return (

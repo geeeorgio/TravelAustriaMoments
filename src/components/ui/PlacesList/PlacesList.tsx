@@ -30,6 +30,7 @@ const PlacesList = ({
         />
       )}
       contentContainerStyle={styles.contentContainer}
+      style={styles.list}
       showsVerticalScrollIndicator={false}
       ListFooterComponent={() => <View style={styles.footer} />}
     />

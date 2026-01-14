@@ -4,10 +4,13 @@ import { hp, wp } from 'src/utils';
 
 export const styles = StyleSheet.create({
   contentContainer: {
-    width: '100%',
     gap: wp(16),
+    paddingBottom: hp(100),
+  },
+  list: {
+    width: '100%',
   },
   footer: {
-    height: hp(180),
+    height: hp(20),
   },
 });
