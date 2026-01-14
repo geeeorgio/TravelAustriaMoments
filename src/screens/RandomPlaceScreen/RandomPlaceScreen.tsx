@@ -88,6 +88,7 @@ const RandomPlaceScreen = () => {
 
             <View style={styles.mapContainer}>
               <MapComponent
+                key={randomPlace.id}
                 coordinates={getCoordinatesById(randomPlace.location)}
                 title={randomPlace.title}
                 extraStyle={styles.map}
