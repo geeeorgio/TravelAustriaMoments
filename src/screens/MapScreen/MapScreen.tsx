@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
@@ -7,18 +6,12 @@ import { styles } from './styles';
 
 import { MapIcon, PlaceItem, PlaceModal } from 'src/components';
 import { COLORS, darkMapStyle, PLACES_LIST } from 'src/constants';
-import { useGameContext } from 'src/hooks/useGameContext';
-import type {
-  HomeStackNavigationProp,
-  LocationType,
-  RouteType,
-} from 'src/types';
+import { usePlaceActions } from 'src/hooks/usePlaceActions';
+import type { LocationType, RouteType } from 'src/types';
 import { getCoordinatesById, hp, wp } from 'src/utils';
 
 const MapScreen = () => {
-  const navigation = useNavigation<HomeStackNavigationProp>();
-  const { addContextFavourites, removeFromContextFavourites, isInFavourites } =
-    useGameContext();
+  const { handleOpenPress, handleFavouriteToggle } = usePlaceActions();
 
   const [selectedPlace, setSelectedPlace] = useState<
     LocationType | RouteType | null
@@ -37,17 +30,9 @@ const MapScreen = () => {
     setSelectedPlace(null);
   };
 
-  const handleOpenPress = (item: LocationType | RouteType) => {
+  const handleOpenPressWithClose = (item: LocationType | RouteType) => {
     setSelectedPlace(null);
-    navigation.navigate('PlaceDetailsScreen', { item });
-  };
-
-  const handleFavouritePress = (item: LocationType | RouteType) => {
-    if (isInFavourites(item.id)) {
-      removeFromContextFavourites(item.id);
-    } else {
-      addContextFavourites(item);
-    }
+    handleOpenPress(item);
   };
 
   return (
@@ -87,8 +72,8 @@ const MapScreen = () => {
           <View style={styles.modalContent}>
             <PlaceItem
               item={selectedPlace}
-              onOpenPress={handleOpenPress}
-              onFavouritePress={handleFavouritePress}
+              onOpenPress={handleOpenPressWithClose}
+              onFavouritePress={handleFavouriteToggle}
             />
           </View>
         </PlaceModal>

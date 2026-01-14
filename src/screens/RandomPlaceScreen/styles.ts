@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { FONTS } from 'src/constants';
+import { COLORS, FONTS } from 'src/constants';
 import { hp, sp, wp } from 'src/utils';
 
 export const styles = StyleSheet.create({
@@ -11,40 +11,43 @@ export const styles = StyleSheet.create({
   startContainer: {
     flex: 1,
     width: '100%',
-    paddingHorizontal: wp(16),
     justifyContent: 'center',
-    alignItems: 'center',
-    gap: hp(32),
-  },
-  imageWrapper: {
-    width: '100%',
-    height: hp(400),
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   guideImage: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     width: '100%',
     height: '100%',
   },
+  contentOverlay: {
+    width: '100%',
+    paddingHorizontal: wp(24),
+    paddingVertical: hp(40),
+    alignItems: 'center',
+    gap: hp(24),
+    backgroundColor: COLORS.transparentBckgd,
+    borderTopLeftRadius: wp(32),
+    borderTopRightRadius: wp(32),
+    zIndex: 1,
+  },
   textContainer: {
     width: '100%',
-    alignItems: 'center',
-    gap: hp(12),
+
+    gap: hp(8),
   },
   startTitle: {
-    fontSize: sp(24),
+    fontSize: sp(16),
     fontFamily: FONTS.Ultra,
-    textAlign: 'center',
   },
   startDescription: {
     fontSize: sp(14),
-    fontFamily: FONTS.MontserratRegular,
-    textAlign: 'center',
     opacity: 0.8,
   },
   content: {
     width: '100%',
-    paddingHorizontal: wp(16),
     gap: hp(20),
   },
   cardContainer: {

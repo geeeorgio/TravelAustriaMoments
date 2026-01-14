@@ -12,29 +12,16 @@ import {
 } from 'src/components';
 import { CAPIBARA } from 'src/constants';
 import { useGameContext } from 'src/hooks/useGameContext';
-import type {
-  HomeStackNavigationProp,
-  LocationType,
-  MainStackNavigationProp,
-  RouteType,
-} from 'src/types';
+import { usePlaceActions } from 'src/hooks/usePlaceActions';
+import type { MainStackNavigationProp } from 'src/types';
 
 const FavouriteScreen = () => {
-  const { contextFavourites, removeFromContextFavourites } = useGameContext();
-
+  const { contextFavourites } = useGameContext();
+  const { handleOpenPress, handleFavouriteToggle } = usePlaceActions();
   const navigation = useNavigation<MainStackNavigationProp>();
-  const homeNavigation = useNavigation<HomeStackNavigationProp>();
 
   const handleSearchPlace = () => {
     navigation.navigate('HomeStack', { screen: 'LocationsScreen' });
-  };
-
-  const handleOpenPress = (item: LocationType | RouteType) => {
-    homeNavigation.navigate('PlaceDetailsScreen', { item });
-  };
-
-  const handleFavouritePress = (item: LocationType | RouteType) => {
-    removeFromContextFavourites(item.id);
   };
 
   const animatedValues = useRef(
@@ -71,12 +58,12 @@ const FavouriteScreen = () => {
       {contextFavourites.length > 0 ? (
         <>
           <CustomText extraStyle={styles.title}>
-            Your Favourite Places
+            Your saved locations
           </CustomText>
           <PlacesList
             data={contextFavourites}
             handleOpenPress={handleOpenPress}
-            handleFavouritePress={handleFavouritePress}
+            handleFavouritePress={handleFavouriteToggle}
           />
         </>
       ) : (

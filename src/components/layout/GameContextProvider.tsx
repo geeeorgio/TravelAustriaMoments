@@ -11,6 +11,7 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
   const [favouritesList, setFavouritesList] = useState<
     (LocationType | RouteType)[]
   >([]);
+  const [favouritesSet, setFavouritesSet] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     const init = async () => {
@@ -25,6 +26,7 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
         if (savedOnboarding !== null) setOnboardingDone(savedOnboarding);
         if (savedFavourites && Array.isArray(savedFavourites)) {
           setFavouritesList(savedFavourites);
+          setFavouritesSet(new Set(savedFavourites.map((item) => item.id)));
         }
       } catch (e) {
         console.error('Context init error:', e);
@@ -40,41 +42,48 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
 
   const addContextFavourites = useCallback(
     async (item: LocationType | RouteType) => {
-      const isAlreadyInFavourites = favouritesList.some(
-        (fav) => fav.id === item.id,
-      );
-      if (isAlreadyInFavourites) {
-        console.log('Item already in favourites:', item.id);
-        return;
-      }
+      setFavouritesList((prev) => {
+        const isAlreadyInFavourites = prev.some((fav) => fav.id === item.id);
+        if (isAlreadyInFavourites) {
+          if (__DEV__) console.log('Item already in favourites:', item.id);
+          return prev;
+        }
 
-      const newList = [...favouritesList, item];
-      setFavouritesList(newList);
-      await setItemInStorage('favouritePlacesList', newList);
-      console.log('Added to favourites:', item.title);
+        const newList = [...prev, item];
+        setFavouritesSet(new Set([...favouritesSet, item.id]));
+        setItemInStorage('favouritePlacesList', newList);
+        if (__DEV__) console.log('Added to favourites:', item.title);
+        return newList;
+      });
     },
-    [favouritesList],
+    [favouritesSet],
   );
 
   const removeFromContextFavourites = useCallback(
     async (id: string) => {
-      const newList = favouritesList.filter((p) => p.id !== id);
-      setFavouritesList(newList);
-      await setItemInStorage('favouritePlacesList', newList);
-      console.log('Removed from favourites:', id);
+      setFavouritesList((prev) => {
+        const newList = prev.filter((p) => p.id !== id);
+        const newSet = new Set(favouritesSet);
+        newSet.delete(id);
+        setFavouritesSet(newSet);
+        setItemInStorage('favouritePlacesList', newList);
+        if (__DEV__) console.log('Removed from favourites:', id);
+        return newList;
+      });
     },
-    [favouritesList],
+    [favouritesSet],
   );
 
   const isInFavourites = useCallback(
     (id: string) => {
-      return favouritesList.some((item) => item.id === id);
+      return favouritesSet.has(id);
     },
-    [favouritesList],
+    [favouritesSet],
   );
 
   const resetGameData = useCallback(async () => {
     setFavouritesList([]);
+    setFavouritesSet(new Set());
     await setItemInStorage('favouritePlacesList', []);
   }, []);
 

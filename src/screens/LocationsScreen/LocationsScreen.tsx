@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { ScrollView } from 'react-native';
 
@@ -12,18 +11,11 @@ import {
   PlacesList,
 } from 'src/components';
 import { PLACES_LIST } from 'src/constants';
-import { useGameContext } from 'src/hooks/useGameContext';
-import type {
-  HomeStackNavigationProp,
-  LocationObjectType,
-  LocationType,
-  RouteType,
-} from 'src/types';
+import { usePlaceActions } from 'src/hooks/usePlaceActions';
+import type { LocationObjectType } from 'src/types';
 
 const LocationsScreen = () => {
-  const navigation = useNavigation<HomeStackNavigationProp>();
-  const { addContextFavourites, removeFromContextFavourites, isInFavourites } =
-    useGameContext();
+  const { handleOpenPress, handleFavouriteToggle } = usePlaceActions();
 
   const [selectedLocation, setSelectedLocation] =
     useState<LocationObjectType | null>(null);
@@ -34,18 +26,6 @@ const LocationsScreen = () => {
 
   const handleBackPress = () => {
     setSelectedLocation(null);
-  };
-
-  const handleOpenPress = (item: LocationType | RouteType) => {
-    navigation.navigate('PlaceDetailsScreen', { item });
-  };
-
-  const handleFavouritePress = (item: LocationType | RouteType) => {
-    if (isInFavourites(item.id)) {
-      removeFromContextFavourites(item.id);
-    } else {
-      addContextFavourites(item);
-    }
   };
 
   return (
@@ -65,7 +45,7 @@ const LocationsScreen = () => {
         <PlacesList
           data={selectedLocation.list}
           handleOpenPress={handleOpenPress}
-          handleFavouritePress={handleFavouritePress}
+          handleFavouritePress={handleFavouriteToggle}
         />
       ) : (
         <ScrollView

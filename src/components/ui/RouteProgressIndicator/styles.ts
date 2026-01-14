@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: hp(16),
-    marginTop: hp(8),
+    marginBottom: hp(12),
+    marginTop: hp(6),
   },
   circle: {
     width: wp(40),

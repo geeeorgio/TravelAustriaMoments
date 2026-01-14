@@ -8,8 +8,8 @@ export const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: hp(10),
-    marginBottom: hp(16),
+    paddingVertical: hp(8),
+    marginBottom: hp(12),
   },
   leftButton: {
     width: wp(34),

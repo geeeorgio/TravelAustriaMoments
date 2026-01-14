@@ -11,6 +11,7 @@ import {
   MapComponent,
   PlaceItem,
 } from 'src/components';
+import { usePlaceActions } from 'src/hooks/usePlaceActions';
 import type { HomeStackNavigationProp, HomeStackParamsList } from 'src/types';
 import { getCoordinatesById } from 'src/utils';
 
@@ -18,6 +19,7 @@ const PlaceDetailsScreen = () => {
   const navigation = useNavigation<HomeStackNavigationProp>();
   const route =
     useRoute<RouteProp<HomeStackParamsList, 'PlaceDetailsScreen'>>();
+  const { handleFavouriteToggle } = usePlaceActions();
   const { item } = route.params;
 
   const handleBackPress = () => {
@@ -37,10 +39,11 @@ const PlaceDetailsScreen = () => {
         <PlaceItem
           item={item}
           onOpenPress={() => {}}
-          onFavouritePress={() => {}}
+          onFavouritePress={handleFavouriteToggle}
         />
 
         <MapComponent
+          key={item.id}
           coordinates={coordinates}
           title={item.title}
           description={item.location}

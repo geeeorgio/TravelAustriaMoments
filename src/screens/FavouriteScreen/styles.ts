@@ -5,12 +5,11 @@ import { hp, sp, wp } from 'src/utils';
 
 export const styles = StyleSheet.create({
   container: {
-    paddingTop: hp(50),
+    paddingTop: hp(24),
     alignItems: 'center',
   },
   title: {
     fontSize: sp(16),
-    fontFamily: FONTS.Ultra,
     marginBottom: hp(20),
   },
   noFavouritesContainer: {

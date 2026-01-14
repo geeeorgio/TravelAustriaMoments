@@ -1,12 +1,18 @@
 import { StyleSheet } from 'react-native';
 
-import { FONTS } from 'src/constants';
+import { COLORS, FONTS } from 'src/constants';
 import { hp, sp, wp } from 'src/utils';
 
 export const styles = StyleSheet.create({
   container: {
     width: '100%',
+    flex: 1,
     alignItems: 'center',
+    backgroundColor: COLORS.transparentBckgd,
+  },
+  horizontalContentWrapper: {
+    width: '100%',
+    justifyContent: 'space-between',
   },
   title: {
     fontSize: sp(15),
@@ -24,37 +30,47 @@ export const styles = StyleSheet.create({
     gap: hp(20),
   },
   completionContainer: {
+    flex: 1,
     width: '100%',
-    alignItems: 'center',
-  },
-  completionImageContainer: {
-    width: '100%',
-    height: hp(280),
-    maxHeight: '45%',
-    marginBottom: hp(24),
+    justifyContent: 'center',
   },
   completionImage: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     width: '100%',
     height: '100%',
+  },
+  completionContentOverlay: {
+    width: '100%',
+    padding: wp(16),
+    alignItems: 'center',
+    backgroundColor: COLORS.lightDarkerBorder,
+    borderRadius: wp(32),
+    overflow: 'hidden',
+    borderWidth: wp(2),
+    borderColor: COLORS.lightBorder,
+    gap: hp(20),
+    zIndex: 1,
   },
   completionTextContainer: {
     width: '100%',
     alignItems: 'center',
-    marginBottom: hp(24),
-    gap: hp(12),
+    gap: hp(8),
   },
   completionTitle: {
     fontSize: sp(16),
-    fontFamily: FONTS.Ultra,
     textAlign: 'center',
-    marginBottom: hp(8),
   },
   completionDescription: {
-    fontSize: sp(14),
+    fontSize: sp(16),
     textAlign: 'center',
   },
   randomLocationButton: {
     width: '100%',
+    marginTop: hp(24),
     paddingVertical: wp(16),
   },
   randomLocationButtonText: {

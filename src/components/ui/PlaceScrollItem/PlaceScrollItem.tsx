@@ -21,7 +21,7 @@ const PlaceScrollItem = ({
     <ImageBackground
       source={location.list[0].image}
       style={styles.imgContainer}
-      resizeMode="stretch"
+      resizeMode="cover"
     >
       <View style={styles.infoContainer}>
         <CustomText extraStyle={styles.infoText}>{location.id}</CustomText>

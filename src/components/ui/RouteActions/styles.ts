@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     gap: wp(12),
-    marginTop: hp(16),
+    marginTop: hp(12),
   },
   button: {
     flex: 1,

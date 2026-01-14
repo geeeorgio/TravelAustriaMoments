@@ -10,7 +10,6 @@ import { getRandomTip } from 'src/utils/getRandomTip';
 
 const TipsScreen = () => {
   const [currentTip, setCurrentTipContext] = useState<TipType | null>(null);
-  console.log('currentTip', currentTip);
 
   const handleGetRandomTip = () => {
     const randomTip = getRandomTip();

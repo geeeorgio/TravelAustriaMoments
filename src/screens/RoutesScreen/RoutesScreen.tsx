@@ -5,7 +5,7 @@ import type {
   NativeScrollEvent,
   NativeSyntheticEvent,
 } from 'react-native';
-import { Dimensions, Image, ScrollView, View } from 'react-native';
+import { Image, ScrollView, View } from 'react-native';
 
 import { styles } from './styles';
 
@@ -19,8 +19,8 @@ import {
   RouteActions,
   RouteProgressIndicator,
 } from 'src/components';
-import { GUIDE, PLACES_LIST } from 'src/constants';
-import { useGameContext } from 'src/hooks/useGameContext';
+import { GUIDE, HORIZONTAL_LIST_GEOMETRY, PLACES_LIST } from 'src/constants';
+import { usePlaceActions } from 'src/hooks/usePlaceActions';
 import type {
   HomeStackNavigationProp,
   LocationObjectType,
@@ -28,19 +28,18 @@ import type {
   RouteType,
 } from 'src/types';
 
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
-const ITEM_WIDTH = SCREEN_WIDTH;
+const { SNAP_INTERVAL } = HORIZONTAL_LIST_GEOMETRY;
 
 const RoutesScreen = () => {
   const navigation = useNavigation<HomeStackNavigationProp>();
-  const { addContextFavourites, removeFromContextFavourites, isInFavourites } =
-    useGameContext();
-  const flatListRef = useRef<FlatListType<any>>(null);
+  const { handleOpenPress, handleFavouriteToggle } = usePlaceActions();
+  const flatListRef = useRef<FlatListType<LocationType | RouteType>>(null);
 
   const [selectedLocation, setSelectedLocation] =
     useState<LocationObjectType | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visitedIndices, setVisitedIndices] = useState<Set<number>>(new Set());
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const handleChooseLocation = (location: LocationObjectType) => {
     setSelectedLocation(location);
@@ -55,21 +54,31 @@ const RoutesScreen = () => {
   };
 
   const handleScrollEnd = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    setIsScrolling(false);
+
     if (!selectedLocation) return;
     const offsetX = event.nativeEvent.contentOffset.x;
-    const index = Math.round(offsetX / ITEM_WIDTH);
+    const index = Math.round(offsetX / SNAP_INTERVAL);
     const maxIndex = selectedLocation.list.length - 1;
     const clampedIndex = Math.max(0, Math.min(index, maxIndex));
     setCurrentIndex(clampedIndex);
   };
 
   const handleNextLocation = () => {
-    if (!selectedLocation || currentIndex >= selectedLocation.list.length - 1)
+    if (
+      isScrolling ||
+      !selectedLocation ||
+      currentIndex >= selectedLocation.list.length - 1
+    ) {
       return;
+    }
 
     handleMarkAsVisited();
+    setIsScrolling(true);
 
     const nextIndex = currentIndex + 1;
+    setCurrentIndex(nextIndex);
+
     flatListRef.current?.scrollToIndex({
       index: nextIndex,
       animated: true,
@@ -87,18 +96,6 @@ const RoutesScreen = () => {
 
   const handleGetRandomLocation = () => {
     navigation.navigate('RandomPlaceScreen');
-  };
-
-  const handleOpenPress = (item: LocationType | RouteType) => {
-    navigation.navigate('PlaceDetailsScreen', { item });
-  };
-
-  const handleFavouritePress = (item: LocationType | RouteType) => {
-    if (isInFavourites(item.id)) {
-      removeFromContextFavourites(item.id);
-    } else {
-      addContextFavourites(item);
-    }
   };
 
   const totalLocations = selectedLocation?.list.length || 0;
@@ -130,16 +127,14 @@ const RoutesScreen = () => {
 
       {selectedLocation ? (
         isRouteCompleted ? (
-          <>
-            <View style={styles.completionContainer}>
-              <View style={styles.completionImageContainer}>
-                <Image
-                  source={GUIDE.routes}
-                  style={styles.completionImage}
-                  resizeMode="contain"
-                />
-              </View>
+          <View style={styles.completionContainer}>
+            <Image
+              source={GUIDE.routes}
+              style={styles.completionImage}
+              resizeMode="contain"
+            />
 
+            <View style={styles.completionContentOverlay}>
               <View style={styles.completionTextContainer}>
                 <CustomText extraStyle={styles.completionTitle}>
                   You completed the route!
@@ -158,14 +153,14 @@ const RoutesScreen = () => {
                 Get random location!
               </CustomText>
             </CustomButton>
-          </>
+          </View>
         ) : (
-          <>
+          <View style={styles.horizontalContentWrapper}>
             <PlacesList
               direction="horizontal"
               data={selectedLocation.list}
               handleOpenPress={handleOpenPress}
-              handleFavouritePress={handleFavouritePress}
+              handleFavouritePress={handleFavouriteToggle}
               onScrollEnd={handleScrollEnd}
               listRef={flatListRef}
             />
@@ -176,7 +171,7 @@ const RoutesScreen = () => {
               isLastStep={isLastIndex}
               isCurrentVisited={isCurrentVisited}
             />
-          </>
+          </View>
         )
       ) : (
         <ScrollView

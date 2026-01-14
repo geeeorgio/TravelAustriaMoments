@@ -1,7 +1,5 @@
 import { StyleSheet } from 'react-native';
 
-import { wp } from 'src/utils';
-
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -9,6 +7,5 @@ export const styles = StyleSheet.create({
   },
   modalContent: {
     width: '100%',
-    paddingHorizontal: wp(16),
   },
 });

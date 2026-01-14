@@ -1,8 +1,7 @@
-import { Dimensions, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
+import { DESIGN_TOKENS, HORIZONTAL_LIST_GEOMETRY } from 'src/constants';
 import { hp, wp } from 'src/utils';
-
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   contentContainer: {
@@ -16,12 +15,12 @@ export const styles = StyleSheet.create({
     height: hp(20),
   },
   horizontalList: {
-    flexGrow: 0,
     width: '100%',
   },
   horizontalItemWrapper: {
-    width: SCREEN_WIDTH,
-    paddingVertical: hp(10),
+    width: HORIZONTAL_LIST_GEOMETRY.ITEM_WIDTH - DESIGN_TOKENS.spacing.lg,
+    paddingRight: DESIGN_TOKENS.spacing.xl,
+    paddingVertical: hp(8),
     alignItems: 'center',
   },
 });

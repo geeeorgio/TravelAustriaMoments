@@ -13,7 +13,7 @@ import {
   PlaceItem,
 } from 'src/components';
 import { GUIDE, PLACES_LIST } from 'src/constants';
-import { useGameContext } from 'src/hooks/useGameContext';
+import { usePlaceActions } from 'src/hooks/usePlaceActions';
 import type {
   HomeStackNavigationProp,
   LocationType,
@@ -23,8 +23,7 @@ import { getCoordinatesById } from 'src/utils';
 
 const RandomPlaceScreen = () => {
   const navigation = useNavigation<HomeStackNavigationProp>();
-  const { addContextFavourites, removeFromContextFavourites, isInFavourites } =
-    useGameContext();
+  const { handleOpenPress, handleFavouriteToggle } = usePlaceActions();
 
   const [randomPlace, setRandomPlace] = useState<
     LocationType | RouteType | null
@@ -56,18 +55,6 @@ const RandomPlaceScreen = () => {
     }
   };
 
-  const handleOpenPress = (item: LocationType | RouteType) => {
-    navigation.navigate('PlaceDetailsScreen', { item });
-  };
-
-  const handleFavouritePress = (item: LocationType | RouteType) => {
-    if (isInFavourites(item.id)) {
-      removeFromContextFavourites(item.id);
-    } else {
-      addContextFavourites(item);
-    }
-  };
-
   return (
     <CustomScreenWrapper extraStyle={styles.container}>
       {randomPlace ? (
@@ -82,7 +69,7 @@ const RandomPlaceScreen = () => {
               <PlaceItem
                 item={randomPlace}
                 onOpenPress={handleOpenPress}
-                onFavouritePress={handleFavouritePress}
+                onFavouritePress={handleFavouriteToggle}
               />
             </View>
 
@@ -108,30 +95,30 @@ const RandomPlaceScreen = () => {
         </>
       ) : (
         <View style={styles.startContainer}>
-          <View style={styles.imageWrapper}>
-            <Image
-              source={GUIDE.randomPlace}
-              style={styles.guideImage}
-              resizeMode="contain"
-            />
-          </View>
+          <Image
+            source={GUIDE.randomPlace}
+            style={styles.guideImage}
+            resizeMode="contain"
+          />
 
-          <View style={styles.textContainer}>
-            <CustomText extraStyle={styles.startTitle}>
-              Can't decide?
-            </CustomText>
-            <CustomText extraStyle={styles.startDescription}>
-              Get a random location and discover something new nearby.
-            </CustomText>
-          </View>
+          <View style={styles.contentOverlay}>
+            <View style={styles.textContainer}>
+              <CustomText extraStyle={styles.startTitle}>
+                Can't decide?
+              </CustomText>
+              <CustomText extraStyle={styles.startDescription}>
+                Get a random location and discover something new nearby.
+              </CustomText>
+            </View>
 
-          <CustomButton
-            variant="red"
-            onPress={handleGetRandomPlace}
-            extraStyle={styles.button}
-          >
-            <CustomText extraStyle={styles.buttonText}>Get!</CustomText>
-          </CustomButton>
+            <CustomButton
+              variant="red"
+              onPress={handleGetRandomPlace}
+              extraStyle={styles.button}
+            >
+              <CustomText extraStyle={styles.buttonText}>Get!</CustomText>
+            </CustomButton>
+          </View>
         </View>
       )}
     </CustomScreenWrapper>

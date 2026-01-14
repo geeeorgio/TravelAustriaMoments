@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   },
   imageContainer: {
     width: '100%',
-    height: hp(140),
+    height: hp(120),
   },
   image: {
     width: '100%',
@@ -35,8 +35,8 @@ export const styles = StyleSheet.create({
   content: {
     width: '100%',
     justifyContent: 'space-between',
-    padding: wp(12),
-    gap: hp(8),
+    padding: wp(10),
+    gap: hp(6),
   },
   title: {
     fontSize: sp(16),
