@@ -1,11 +1,70 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react';
+import { ScrollView } from 'react-native';
+
+import { styles } from './styles';
+
+import {
+  CustomHeader,
+  CustomScreenWrapper,
+  CustomText,
+  PlaceScrollItem,
+  PlacesList,
+} from 'src/components';
+import { PLACES_LIST } from 'src/constants';
+import type { HomeStackNavigationProp, LocationObjectType } from 'src/types';
 
 const LocationsScreen = () => {
+  const navigation = useNavigation<HomeStackNavigationProp>();
+
+  const [selectedLocation, setSelectedLocation] =
+    useState<LocationObjectType | null>(null);
+
+  const handleChooseLocation = (location: LocationObjectType) => {
+    setSelectedLocation(location);
+  };
+
+  const handleBackPress = () => {
+    setSelectedLocation(null);
+    navigation.navigate('LocationsScreen');
+  };
+
   return (
-    <View>
-      <Text>LocationsScreen</Text>
-    </View>
+    <CustomScreenWrapper extraStyle={styles.container}>
+      {selectedLocation ? (
+        <CustomHeader
+          title="Choose the location"
+          onBackPress={handleBackPress}
+        />
+      ) : (
+        <CustomText extraStyle={styles.title}>
+          Choose the category of locations
+        </CustomText>
+      )}
+
+      {selectedLocation ? (
+        <PlacesList
+          data={selectedLocation.list}
+          handleOpenPress={() => {}}
+          handleFavouritePress={() => {}}
+        />
+      ) : (
+        <ScrollView
+          style={styles.listContainer}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.listContentContainer}
+          nestedScrollEnabled={true}
+        >
+          {PLACES_LIST.Locations.map((location) => (
+            <PlaceScrollItem
+              key={location.id}
+              location={location}
+              onPress={handleChooseLocation}
+            />
+          ))}
+        </ScrollView>
+      )}
+    </CustomScreenWrapper>
   );
 };
 

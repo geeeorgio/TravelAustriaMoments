@@ -10,7 +10,7 @@ export type LocationType = {
   title: string;
   description: string;
   location: string;
-  image?: ImageSourcePropType;
+  image: ImageSourcePropType;
 };
 
 export type RouteType = {
@@ -18,13 +18,18 @@ export type RouteType = {
   title: string;
   description: string;
   location: string;
-  image?: ImageSourcePropType;
+  image: ImageSourcePropType;
 };
 
 export type TipType = {
   id: string;
   title: string;
   description: string;
+};
+
+export type LocationObjectType = {
+  id: string;
+  list: LocationType[];
 };
 
 export type GameContextType = {

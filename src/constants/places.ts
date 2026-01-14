@@ -271,15 +271,38 @@ export const LocationTypes = ['City', 'Culture', 'Nature'] as const;
 export const RouteTypes = ['Route1', 'Route2', 'Route3'] as const;
 
 export const PLACES_LIST = {
-  Locations: {
-    Cities: CITIES_LIST,
-    Culture: CULTURE_LIST,
-    Nature: NATURE_LIST,
-  },
-  Routes: {
-    Route1: ROUTE_1,
-    Route2: ROUTE_2,
-    Route3: ROUTE_3,
-  },
-  Tips: TIPS_LIST,
+  Locations: [
+    {
+      id: 'Cities',
+      list: CITIES_LIST,
+    },
+    {
+      id: 'Culture',
+      list: CULTURE_LIST,
+    },
+    {
+      id: 'Nature',
+      list: NATURE_LIST,
+    },
+  ],
+  Routes: [
+    {
+      id: 'Vienna Classic Walk',
+      list: ROUTE_1,
+    },
+    {
+      id: 'Salzburg Old Town Route',
+      list: ROUTE_2,
+    },
+    {
+      id: 'Alpine Nature Escape',
+      list: ROUTE_3,
+    },
+  ],
+  Tips: [
+    {
+      id: 'Tips',
+      list: TIPS_LIST,
+    },
+  ],
 };
