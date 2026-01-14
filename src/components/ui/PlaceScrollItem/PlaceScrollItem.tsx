@@ -9,9 +9,14 @@ import type { LocationObjectType } from 'src/types';
 interface PlaceScrollItemProps {
   location: LocationObjectType;
   onPress: (location: LocationObjectType) => void;
+  btnText?: 'Choose' | 'Go';
 }
 
-const PlaceScrollItem = ({ location, onPress }: PlaceScrollItemProps) => {
+const PlaceScrollItem = ({
+  location,
+  onPress,
+  btnText = 'Choose',
+}: PlaceScrollItemProps) => {
   return (
     <ImageBackground
       source={location.list[0].image}
@@ -25,7 +30,7 @@ const PlaceScrollItem = ({ location, onPress }: PlaceScrollItemProps) => {
           extraStyle={styles.infoButton}
           onPress={() => onPress(location)}
         >
-          <CustomText extraStyle={styles.infoButtonText}>Choose</CustomText>
+          <CustomText extraStyle={styles.infoButtonText}>{btnText}</CustomText>
         </CustomButton>
       </View>
     </ImageBackground>

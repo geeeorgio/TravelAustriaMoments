@@ -17,21 +17,23 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   infoContainer: {
+    width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: wp(20),
     paddingVertical: hp(10),
+    gap: wp(10),
     backgroundColor: COLORS.transparentBckgd,
   },
   infoText: {
-    fontSize: sp(16),
+    fontSize: sp(15),
   },
   infoButton: {
-    width: wp(100),
+    width: wp(95),
   },
   infoButtonText: {
-    fontSize: sp(13),
+    fontSize: sp(12),
     fontFamily: FONTS.Ultra,
   },
 });

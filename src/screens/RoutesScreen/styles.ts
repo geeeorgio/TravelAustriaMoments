@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import { FONTS } from 'src/constants';
-import { hp, sp, wp } from 'src/utils';
+import { hp, sp } from 'src/utils';
 
 export const styles = StyleSheet.create({
   container: {
@@ -20,7 +20,6 @@ export const styles = StyleSheet.create({
     width: '100%',
   },
   listContentContainer: {
-    paddingHorizontal: wp(16),
     paddingBottom: hp(180),
     gap: hp(20),
   },

@@ -60,6 +60,7 @@ const RoutesScreen = () => {
               key={route.id}
               location={route}
               onPress={handleChooseLocation}
+              btnText="Go"
             />
           ))}
         </ScrollView>
