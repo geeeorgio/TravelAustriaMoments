@@ -1,3 +1,14 @@
 import { StyleSheet } from 'react-native';
 
-export const styles = StyleSheet.create({});
+import { wp } from 'src/utils';
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: '100%',
+  },
+  modalContent: {
+    width: '100%',
+    paddingHorizontal: wp(16),
+  },
+});

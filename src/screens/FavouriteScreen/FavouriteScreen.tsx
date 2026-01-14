@@ -1,21 +1,40 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useRef } from 'react';
-import { Animated, Image, Text, View } from 'react-native';
+import { Animated, Image, View } from 'react-native';
 
 import { styles } from './styles';
 
-import { CustomButton, CustomScreenWrapper, CustomText } from 'src/components';
+import {
+  CustomButton,
+  CustomScreenWrapper,
+  CustomText,
+  PlacesList,
+} from 'src/components';
 import { CAPIBARA } from 'src/constants';
 import { useGameContext } from 'src/hooks/useGameContext';
-import type { MainStackNavigationProp } from 'src/types';
+import type {
+  HomeStackNavigationProp,
+  LocationType,
+  MainStackNavigationProp,
+  RouteType,
+} from 'src/types';
 
 const FavouriteScreen = () => {
-  const { contextFavourites } = useGameContext();
+  const { contextFavourites, removeFromContextFavourites } = useGameContext();
 
   const navigation = useNavigation<MainStackNavigationProp>();
+  const homeNavigation = useNavigation<HomeStackNavigationProp>();
 
   const handleSearchPlace = () => {
     navigation.navigate('HomeStack', { screen: 'LocationsScreen' });
+  };
+
+  const handleOpenPress = (item: LocationType | RouteType) => {
+    homeNavigation.navigate('PlaceDetailsScreen', { item });
+  };
+
+  const handleFavouritePress = (item: LocationType | RouteType) => {
+    removeFromContextFavourites(item.id);
   };
 
   const animatedValues = useRef(
@@ -50,9 +69,16 @@ const FavouriteScreen = () => {
   return (
     <CustomScreenWrapper extraStyle={styles.container}>
       {contextFavourites.length > 0 ? (
-        <View>
-          <Text>FavouriteScreen</Text>
-        </View>
+        <>
+          <CustomText extraStyle={styles.title}>
+            Your Favourite Places
+          </CustomText>
+          <PlacesList
+            data={contextFavourites}
+            handleOpenPress={handleOpenPress}
+            handleFavouritePress={handleFavouritePress}
+          />
+        </>
       ) : (
         <View style={styles.noFavouritesContainer}>
           <CustomText extraStyle={styles.noFavouritesText}>

@@ -38,9 +38,10 @@ export type GameContextType = {
   isContextOnboardingCompleted: boolean;
   setIsContextOnboardingCompleted: (value: boolean) => void;
   //
-  contextFavourites: [];
-  addContextFavourites: (id: string) => void;
+  contextFavourites: (LocationType | RouteType)[];
+  addContextFavourites: (item: LocationType | RouteType) => void;
   removeFromContextFavourites: (id: string) => void;
+  isInFavourites: (id: string) => boolean;
   //
   resetGameData: () => Promise<void>;
 };

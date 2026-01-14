@@ -12,6 +12,7 @@ import {
   PlaceItem,
 } from 'src/components';
 import type { HomeStackNavigationProp, HomeStackParamsList } from 'src/types';
+import { getCoordinatesById } from 'src/utils';
 
 const PlaceDetailsScreen = () => {
   const navigation = useNavigation<HomeStackNavigationProp>();
@@ -23,14 +24,7 @@ const PlaceDetailsScreen = () => {
     navigation.goBack();
   };
 
-  const getCoordinates = () => {
-    return {
-      latitude: 48.2082,
-      longitude: 16.3738,
-    };
-  };
-
-  const { latitude, longitude } = getCoordinates();
+  const coordinates = getCoordinatesById(item.location);
 
   return (
     <CustomScreenWrapper extraStyle={styles.container}>
@@ -47,7 +41,7 @@ const PlaceDetailsScreen = () => {
         />
 
         <MapComponent
-          coordinates={{ latitude, longitude }}
+          coordinates={coordinates}
           title={item.title}
           description={item.location}
         />

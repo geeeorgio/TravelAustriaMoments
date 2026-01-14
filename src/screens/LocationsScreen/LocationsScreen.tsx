@@ -12,10 +12,18 @@ import {
   PlacesList,
 } from 'src/components';
 import { PLACES_LIST } from 'src/constants';
-import type { HomeStackNavigationProp, LocationObjectType } from 'src/types';
+import { useGameContext } from 'src/hooks/useGameContext';
+import type {
+  HomeStackNavigationProp,
+  LocationObjectType,
+  LocationType,
+  RouteType,
+} from 'src/types';
 
 const LocationsScreen = () => {
   const navigation = useNavigation<HomeStackNavigationProp>();
+  const { addContextFavourites, removeFromContextFavourites, isInFavourites } =
+    useGameContext();
 
   const [selectedLocation, setSelectedLocation] =
     useState<LocationObjectType | null>(null);
@@ -28,13 +36,16 @@ const LocationsScreen = () => {
     setSelectedLocation(null);
   };
 
-  const handleOpenPress = (item: any) => {
+  const handleOpenPress = (item: LocationType | RouteType) => {
     navigation.navigate('PlaceDetailsScreen', { item });
   };
 
-  const handleFavouritePress = (item: any) => {
-    // TODO: Add to favourites
-    console.log('Add to favourites:', item.id);
+  const handleFavouritePress = (item: LocationType | RouteType) => {
+    if (isInFavourites(item.id)) {
+      removeFromContextFavourites(item.id);
+    } else {
+      addContextFavourites(item);
+    }
   };
 
   return (

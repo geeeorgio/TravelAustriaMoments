@@ -18,6 +18,7 @@ export const GameContext = createContext<GameContextType>({
   removeFromContextFavourites: async () => {
     console.warn('GameContext not initialized');
   },
+  isInFavourites: () => false,
   //
   resetGameData: async () => {
     console.warn('GameContext not initialized');

@@ -10,6 +10,7 @@ import CustomText from '../CustomText/CustomText';
 import { styles } from './styles';
 
 import { COLORS } from 'src/constants';
+import { useGameContext } from 'src/hooks/useGameContext';
 import type { LocationType, RouteType } from 'src/types';
 import { handleShare, wp } from 'src/utils';
 
@@ -20,6 +21,9 @@ interface PlaceItemProps {
 }
 
 const PlaceItem = ({ item, onOpenPress, onFavouritePress }: PlaceItemProps) => {
+  const { isInFavourites } = useGameContext();
+  const isFavourite = isInFavourites(item.id);
+
   const handleSharePress = () => {
     handleShare();
   };
@@ -58,7 +62,10 @@ const PlaceItem = ({ item, onOpenPress, onFavouritePress }: PlaceItemProps) => {
             </CustomButton>
             <CustomButton
               onPress={() => onFavouritePress(item)}
-              extraStyle={styles.smallBtn}
+              extraStyle={[
+                styles.smallBtn,
+                isFavourite && styles.smallBtnLiked,
+              ]}
             >
               <LikeIcon color={COLORS.white} width={wp(16)} height={wp(16)} />
             </CustomButton>

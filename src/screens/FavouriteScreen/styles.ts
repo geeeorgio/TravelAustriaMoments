@@ -5,7 +5,13 @@ import { hp, sp, wp } from 'src/utils';
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.transparentBckgd,
+    paddingTop: hp(50),
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: sp(16),
+    fontFamily: FONTS.Ultra,
+    marginBottom: hp(20),
   },
   noFavouritesContainer: {
     flex: 1,

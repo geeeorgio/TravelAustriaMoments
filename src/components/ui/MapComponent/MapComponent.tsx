@@ -22,8 +22,6 @@ interface MapComponentProps {
 const MapComponent = ({
   coordinates,
   title,
-  description,
-  fullScreen = false,
   extraStyle,
 }: MapComponentProps) => {
   return (

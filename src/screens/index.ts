@@ -2,6 +2,7 @@ import FavouriteScreen from './FavouriteScreen/FavouriteScreen';
 import HomeScreen from './HomeScreen/HomeScreen';
 import LocationsScreen from './LocationsScreen/LocationsScreen';
 import MapScreen from './MapScreen/MapScreen';
+import MapsScreen from './MapsScreen/MapsScreen';
 import OnboardingScreen from './Onboarding/OnboardingScreen';
 import OnboardingScreen1 from './Onboarding/OnboardingScreen1';
 import OnboardingScreen2 from './Onboarding/OnboardingScreen2';
@@ -22,6 +23,7 @@ export {
   OnboardingScreen2,
   OnboardingScreen3,
   MapScreen,
+  MapsScreen,
   FavouriteScreen,
   PlaceDetailsScreen,
 };

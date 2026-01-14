@@ -80,4 +80,7 @@ export const styles = StyleSheet.create({
     borderWidth: wp(1),
     borderColor: COLORS.white,
   },
+  smallBtnLiked: {
+    backgroundColor: COLORS.red,
+  },
 });

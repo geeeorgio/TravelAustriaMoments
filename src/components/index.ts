@@ -17,6 +17,7 @@ import CustomText from './ui/CustomText/CustomText';
 import HomeMenu from './ui/HomeMenu/HomeMenu';
 import MapComponent from './ui/MapComponent/MapComponent';
 import PlaceItem from './ui/PlaceItem/PlaceItem';
+import PlaceModal from './ui/PlaceModal/PlaceModal';
 import PlaceScrollItem from './ui/PlaceScrollItem/PlaceScrollItem';
 import PlacesList from './ui/PlacesList/PlacesList';
 import RouteActions from './ui/RouteActions/RouteActions';
@@ -24,6 +25,7 @@ import RouteProgressIndicator from './ui/RouteProgressIndicator/RouteProgressInd
 
 export {
   CustomModal,
+  PlaceModal,
   GameBackground,
   GameContextProvider,
   CustomButton,
