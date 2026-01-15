@@ -38,7 +38,7 @@ const TipsScreen = () => {
             extraStyle={styles.button}
           >
             <CustomText extraStyle={styles.buttonText}>
-              {currentTip ? 'Get another tip' : 'Get'}
+              {currentTip ? 'Get another tip' : 'Get!'}
             </CustomText>
           </CustomButton>
         </View>

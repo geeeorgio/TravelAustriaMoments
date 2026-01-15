@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: sp(15),
+    marginTop: hp(10),
     marginBottom: hp(20),
   },
   header: {

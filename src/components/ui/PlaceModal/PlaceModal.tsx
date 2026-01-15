@@ -25,7 +25,7 @@ const PlaceModal = ({ visible, onClose, children }: PlaceModalProps) => {
     >
       <Pressable style={styles.overlay} onPress={onClose}>
         <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-          <ArrowIcon color={COLORS.white} width={wp(24)} height={wp(24)} />
+          <ArrowIcon color={COLORS.white} width={wp(20)} height={wp(20)} />
         </TouchableOpacity>
 
         <Pressable style={styles.content} onPress={(e) => e.stopPropagation()}>

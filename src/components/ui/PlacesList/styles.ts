@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     width: '100%',
   },
   horizontalItemWrapper: {
-    width: HORIZONTAL_LIST_GEOMETRY.ITEM_WIDTH - DESIGN_TOKENS.spacing.lg,
+    width: HORIZONTAL_LIST_GEOMETRY.ITEM_WIDTH - DESIGN_TOKENS.spacing.xl,
     paddingRight: DESIGN_TOKENS.spacing.xl,
     paddingVertical: hp(8),
     alignItems: 'center',

@@ -11,7 +11,7 @@ export const COLORS = {
   lightDarkerBorder: 'rgba(0, 0, 0, 0.1)',
   lightGrayBorder: 'rgba(255, 255, 255, 0.5)',
   tipsBckgd: 'rgba(26, 26, 21, 0.5);',
-  blackBckgd: '#151515',
+  blackBckgd: '#262323',
   greyBckg: '#292323',
   redBorder: '#D62E18',
 };

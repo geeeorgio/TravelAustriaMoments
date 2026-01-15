@@ -22,11 +22,11 @@ export const styles = StyleSheet.create({
     gap: hp(16),
   },
   title: {
-    fontSize: sp(18),
+    fontSize: sp(16),
     fontFamily: FONTS.Ultra,
   },
   description: {
-    fontSize: sp(16),
+    fontSize: sp(15),
   },
   button: {
     width: '100%',

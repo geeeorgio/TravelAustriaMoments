@@ -10,10 +10,7 @@ import PlaceItem from '../PlaceItem/PlaceItem';
 
 import { styles } from './styles';
 
-import { HORIZONTAL_LIST_GEOMETRY } from 'src/constants';
 import type { LocationType, RouteType } from 'src/types';
-
-const { SNAP_INTERVAL } = HORIZONTAL_LIST_GEOMETRY;
 
 interface PlacesListProps {
   data: LocationType[] | RouteType[];
@@ -78,23 +75,6 @@ const PlacesList = ({
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
       onMomentumScrollEnd={onScrollEnd}
-      snapToInterval={direction === 'horizontal' ? SNAP_INTERVAL : undefined}
-      snapToAlignment="center"
-      decelerationRate="fast"
-      disableIntervalMomentum={direction === 'horizontal'}
-      initialNumToRender={direction === 'horizontal' ? 2 : 10}
-      maxToRenderPerBatch={direction === 'horizontal' ? 1 : 10}
-      windowSize={direction === 'horizontal' ? 3 : 10}
-      removeClippedSubviews={direction === 'horizontal'}
-      getItemLayout={
-        direction === 'horizontal'
-          ? (_, index) => ({
-              length: SNAP_INTERVAL,
-              offset: SNAP_INTERVAL * index,
-              index,
-            })
-          : undefined
-      }
     />
   );
 };

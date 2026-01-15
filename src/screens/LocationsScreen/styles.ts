@@ -9,7 +9,8 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: sp(16),
-    marginBottom: hp(24),
+    marginTop: hp(10),
+    marginBottom: hp(20),
   },
   listContainer: {
     width: '100%',

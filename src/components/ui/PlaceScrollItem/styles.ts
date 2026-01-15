@@ -18,22 +18,25 @@ export const styles = StyleSheet.create({
   },
   infoContainer: {
     width: '100%',
+    height: hp(50),
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: wp(20),
-    paddingVertical: hp(10),
     gap: wp(10),
     backgroundColor: COLORS.transparentBckgd,
   },
   infoText: {
-    fontSize: sp(15),
+    fontSize: sp(14),
   },
   infoButton: {
-    width: wp(95),
+    padding: 0,
+    height: '75%',
+    width: wp(100),
   },
   infoButtonText: {
-    fontSize: sp(12),
+    fontSize: sp(11),
     fontFamily: FONTS.Ultra,
+    letterSpacing: wp(1),
   },
 });

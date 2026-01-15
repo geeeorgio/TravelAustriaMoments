@@ -9,10 +9,10 @@ export const styles = StyleSheet.create({
   content: {
     width: '100%',
     alignItems: 'center',
-    justifyContent: 'center',
     paddingHorizontal: wp(60),
   },
   image: {
     width: '100%',
+    alignSelf: 'center',
   },
 });

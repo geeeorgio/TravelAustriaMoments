@@ -21,7 +21,7 @@ const RouteProgressIndicator = ({
   return (
     <View style={styles.wrapper}>
       {Array.from({ length: totalSteps }, (_, index) => {
-        const isCompletedStep = visitedIndices.has(index);
+        const isVisited = visitedIndices.has(index);
         const isCurrent = index === currentIndex;
 
         return (
@@ -29,24 +29,22 @@ const RouteProgressIndicator = ({
             <View
               style={[
                 styles.circle,
-                isCompletedStep && !isCurrent && styles.circleVisited,
-                isCurrent && styles.circleActive,
+                isVisited && styles.circleVisited,
+                isCurrent && !isVisited && styles.circleActive,
               ]}
             >
               <CustomText
                 extraStyle={[
                   styles.text,
-                  isCompletedStep && !isCurrent && styles.textVisited,
-                  isCurrent && styles.textActive,
+                  isVisited && styles.textVisited,
+                  isCurrent && !isVisited && styles.textActive,
                 ]}
               >
                 {index + 1}
               </CustomText>
             </View>
             {index < totalSteps - 1 && (
-              <View
-                style={[styles.line, isCompletedStep && styles.lineVisited]}
-              />
+              <View style={[styles.line, isVisited && styles.lineVisited]} />
             )}
           </React.Fragment>
         );

@@ -13,22 +13,21 @@ export const styles = StyleSheet.create({
   button: {
     flex: 1,
     paddingVertical: wp(12),
-    backgroundColor: COLORS.black,
+    backgroundColor: COLORS.blackBckgd,
     borderWidth: wp(1),
-    borderColor: COLORS.white,
+    borderColor: COLORS.lightBorder,
     borderRadius: wp(20),
     alignItems: 'center',
     justifyContent: 'center',
   },
   buttonPressed: {
-    opacity: 0.7,
-  },
-  buttonDisabled: {
     opacity: 0.5,
   },
+  buttonDisabled: {
+    opacity: 0.7,
+  },
   buttonText: {
-    fontSize: sp(14),
+    fontSize: sp(11),
     fontFamily: FONTS.Ultra,
-    color: COLORS.white,
   },
 });

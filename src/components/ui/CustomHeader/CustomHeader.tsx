@@ -37,7 +37,7 @@ const CustomHeader = ({
   return (
     <View style={styles.container}>
       <CustomButton onPress={handleNavigate} extraStyle={styles.leftButton}>
-        <ArrowIcon color={COLORS.white} width={wp(17)} height={wp(17)} />
+        <ArrowIcon color={COLORS.white} width={wp(15)} height={wp(15)} />
       </CustomButton>
 
       <View style={styles.right}>

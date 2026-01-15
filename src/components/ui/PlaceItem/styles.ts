@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     overflow: 'hidden',
     borderRadius: wp(24),
-    backgroundColor: COLORS.blackBckgd,
+    backgroundColor: COLORS.black,
   },
   imageContainer: {
     width: '100%',
@@ -22,14 +22,15 @@ export const styles = StyleSheet.create({
     height: '100%',
   },
   imageText: {
-    fontSize: sp(14),
+    fontSize: sp(12),
     fontFamily: FONTS.Ultra,
+    letterSpacing: wp(1),
     position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
     backgroundColor: COLORS.transparentBckgd,
-    paddingLeft: wp(16),
+    paddingLeft: wp(10),
     paddingVertical: hp(2),
   },
   content: {
@@ -42,7 +43,7 @@ export const styles = StyleSheet.create({
     fontSize: sp(16),
   },
   description: {
-    fontSize: sp(14),
+    fontSize: sp(12),
   },
   footer: {
     width: '100%',
@@ -52,10 +53,11 @@ export const styles = StyleSheet.create({
     paddingRight: wp(16),
   },
   footerText: {
-    fontSize: sp(14),
+    fontSize: sp(12),
   },
   btnsContainer: {
     width: '100%',
+    height: hp(48),
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -63,13 +65,16 @@ export const styles = StyleSheet.create({
   },
   openBtn: {
     flex: 0.6,
+    padding: 0,
+    height: '100%',
   },
   btnText: {
-    fontSize: sp(14),
+    fontSize: sp(12),
     fontFamily: FONTS.Ultra,
     letterSpacing: wp(1),
   },
   smallBtnsContainer: {
+    height: '100%',
     flex: 0.4,
     flexDirection: 'row',
     alignItems: 'center',

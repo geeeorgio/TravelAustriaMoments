@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
   container: {
     width: '100%',
     alignItems: 'center',
+    backgroundColor: COLORS.transparentBckgd,
   },
   startContainer: {
     flex: 1,
@@ -25,21 +26,20 @@ export const styles = StyleSheet.create({
   contentOverlay: {
     width: '100%',
     paddingHorizontal: wp(24),
-    paddingVertical: hp(40),
+    paddingVertical: hp(24),
     alignItems: 'center',
     gap: hp(24),
-    backgroundColor: COLORS.transparentBckgd,
+    backgroundColor: COLORS.tipsBckgd,
     borderTopLeftRadius: wp(32),
     borderTopRightRadius: wp(32),
     zIndex: 1,
   },
   textContainer: {
     width: '100%',
-
     gap: hp(8),
   },
   startTitle: {
-    fontSize: sp(16),
+    fontSize: sp(15),
     fontFamily: FONTS.Ultra,
   },
   startDescription: {
@@ -48,14 +48,14 @@ export const styles = StyleSheet.create({
   },
   content: {
     width: '100%',
-    gap: hp(20),
+    gap: hp(16),
   },
   cardContainer: {
     width: '100%',
   },
   mapContainer: {
     width: '100%',
-    height: hp(200),
+    height: hp(180),
     borderRadius: wp(16),
     overflow: 'hidden',
   },

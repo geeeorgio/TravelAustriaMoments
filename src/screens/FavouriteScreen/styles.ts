@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
   container: {
     paddingTop: hp(24),
     alignItems: 'center',
+    backgroundColor: COLORS.transparentBckgd,
   },
   title: {
     fontSize: sp(16),
@@ -24,7 +25,7 @@ export const styles = StyleSheet.create({
     opacity: 0.65,
   },
   searchButton: {
-    width: '60%',
+    width: '66%',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -37,8 +38,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   capibaraImage: {
-    width: wp(160),
-    height: hp(90),
+    width: wp(150),
+    height: hp(88),
   },
   capibaraDotsContainer: {
     flexDirection: 'row',

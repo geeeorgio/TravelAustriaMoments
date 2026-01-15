@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     elevation: 10,
   },
   black: {
-    backgroundColor: COLORS.black,
+    backgroundColor: COLORS.blackBckgd,
     borderWidth: wp(1),
     borderColor: COLORS.redBorder,
   },
