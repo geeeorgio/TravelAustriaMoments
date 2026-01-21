@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     overflow: 'hidden',
     borderRadius: wp(24),
-    backgroundColor: COLORS.black,
+    backgroundColor: COLORS.blackBckgd,
   },
   imageContainer: {
     width: '100%',
@@ -83,9 +83,9 @@ export const styles = StyleSheet.create({
   },
   smallBtn: {
     borderWidth: wp(1),
-    borderColor: COLORS.white,
+    borderColor: COLORS.newIndigoLightBorder,
   },
   smallBtnLiked: {
-    backgroundColor: COLORS.newBlueCard3,
+    backgroundColor: COLORS.newIndigoCard,
   },
 });

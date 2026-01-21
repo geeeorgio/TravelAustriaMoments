@@ -13,9 +13,9 @@ export const styles = StyleSheet.create({
   button: {
     flex: 1,
     paddingVertical: wp(12),
-    backgroundColor: COLORS.newBlueCard3,
+    backgroundColor: COLORS.newIndigoCard2,
     borderWidth: wp(1),
-    borderColor: COLORS.newBlueLightBorder,
+    borderColor: COLORS.newIndigoLightBorder,
     borderRadius: wp(20),
     alignItems: 'center',
     justifyContent: 'center',

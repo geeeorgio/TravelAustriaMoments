@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
   },
   content: {
     width: '100%',
-    backgroundColor: COLORS.newBlueContainer,
+    backgroundColor: COLORS.newIndigoContainer,
     borderTopLeftRadius: wp(40),
     borderTopRightRadius: wp(40),
     padding: wp(20),

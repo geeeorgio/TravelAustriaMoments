@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     paddingVertical: hp(24),
     alignItems: 'center',
     gap: hp(24),
-    backgroundColor: COLORS.newBlueContainer,
+    backgroundColor: COLORS.newIndigoContainer,
     borderTopLeftRadius: wp(32),
     borderTopRightRadius: wp(32),
     zIndex: 1,

@@ -19,11 +19,11 @@ export const styles = StyleSheet.create({
     paddingBottom: hp(80),
     paddingHorizontal: wp(33),
     gap: wp(16),
-    borderTopColor: COLORS.newBlueCard3,
+    borderTopColor: COLORS.newIndigoLightBorder,
     borderTopWidth: wp(1),
-    borderLeftColor: COLORS.newBlueCard3,
+    borderLeftColor: COLORS.newIndigoLightBorder,
     borderLeftWidth: wp(1),
-    borderRightColor: COLORS.newBlueCard3,
+    borderRightColor: COLORS.newIndigoLightBorder,
     borderRightWidth: wp(1),
   },
   button: {
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: wp(16),
     borderRadius: wp(20),
     borderWidth: wp(1),
-    borderColor: COLORS.newBlueCard3,
+    borderColor: COLORS.newIndigoLightBorder,
   },
   buttonFocused: {
     // backgroundColor: COLORS.transparentBckgd,

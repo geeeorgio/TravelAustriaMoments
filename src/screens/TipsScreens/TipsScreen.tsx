@@ -23,7 +23,7 @@ const TipsScreen = () => {
       style={styles.imageBackground}
     >
       <CustomScreenWrapper extraStyle={styles.container}>
-        <Image source={GUIDE.tips} style={styles.image} resizeMode="cover" />
+        <Image source={GUIDE.tips} style={styles.image} resizeMode="contain" />
         <View style={styles.content}>
           <CustomText extraStyle={styles.title}>
             {currentTip?.title || 'Travel Tip'}

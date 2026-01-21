@@ -22,4 +22,10 @@ export const COLORS = {
   newBlueContainer: 'rgba(47, 65, 86, 0.8)',
   newBlueLightBorder: 'rgba(255, 255, 255, 0.1)',
   newBlueText: '#E1E2E5',
+
+  newIndigo: '#5A4D80',
+  newIndigoCard: '#5B3281',
+  newIndigoCard2: '#6F6392',
+  newIndigoContainer: 'rgba(98, 77, 128, 0.8)',
+  newIndigoLightBorder: '#937DB1',
 };

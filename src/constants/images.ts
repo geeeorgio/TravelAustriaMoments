@@ -1,14 +1,14 @@
-export const MAIN_BG_IMAGE = require('../assets/images/bckd/blueBg.png');
+export const MAIN_BG_IMAGE = require('../assets/images/bckd/indigoBg.png');
 
-export const HOME_BG = require('../assets/images/bckd/blueBg.png');
+export const HOME_BG = require('../assets/images/bckd/indigoBg.png');
 
-export const TIPS_BG = require('../assets/images/bckd/blueBg.png');
+export const TIPS_BG = require('../assets/images/bckd/indigoBg.png');
 
 export const ONBOARDING = {
-  onbd1: require('../assets/images/onbd/blueOnbd1.png'),
-  onbd2: require('../assets/images/onbd/blueOnbd2.png'),
-  onbd3: require('../assets/images/onbd/blueOnbd3.png'),
-  onbd4: require('../assets/images/onbd/blueOnbd4.png'),
+  onbd1: require('../assets/images/onbd/indigoOnbd1.png'),
+  onbd2: require('../assets/images/onbd/indigoOnbd2.png'),
+  onbd3: require('../assets/images/onbd/indigoOnbd3.png'),
+  onbd4: require('../assets/images/onbd/indigoOnbd4.png'),
 };
 
 export const PLACES = {
@@ -32,10 +32,10 @@ export const PLACES = {
 };
 
 export const GUIDE = {
-  menu: require('../assets/images/screens/blueMenu.png'),
-  randomPlace: require('../assets/images/screens/blueRandom.png'),
-  routes: require('../assets/images/screens/blueRoutes.png'),
-  tips: require('../assets/images/screens/blueTips.png'),
+  menu: require('../assets/images/screens/indigoMenu.png'),
+  randomPlace: require('../assets/images/screens/indigoRandom.png'),
+  routes: require('../assets/images/screens/indigoRoutes.png'),
+  tips: require('../assets/images/screens/indigoTips.png'),
 };
 
 export const CAPIBARA = require('../assets/images/other/capibara.png');
