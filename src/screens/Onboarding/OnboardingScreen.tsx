@@ -35,7 +35,7 @@ const OnboardingScreen = () => {
       </CustomContainer>
 
       <CustomButton
-        variant="red"
+        variant="blue"
         extraStyle={styles.button}
         onPress={handleContinue}
       >

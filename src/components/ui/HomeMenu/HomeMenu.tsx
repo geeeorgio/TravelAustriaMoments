@@ -28,7 +28,7 @@ const HomeMenu = () => {
   return (
     <View style={styles.container}>
       {HomeMenuNames.map((name) => (
-        <CustomButton variant="red" key={name} onPress={handleNavigate(name)}>
+        <CustomButton variant="blue" key={name} onPress={handleNavigate(name)}>
           <CustomText extraStyle={styles.text}>{name}</CustomText>
         </CustomButton>
       ))}

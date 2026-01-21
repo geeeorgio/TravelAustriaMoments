@@ -86,6 +86,6 @@ export const styles = StyleSheet.create({
     borderColor: COLORS.white,
   },
   smallBtnLiked: {
-    backgroundColor: COLORS.red,
+    backgroundColor: COLORS.newBlueCard3,
   },
 });

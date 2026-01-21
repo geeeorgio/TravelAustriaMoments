@@ -5,6 +5,6 @@ import { COLORS, FONTS } from 'src/constants';
 export const styles = StyleSheet.create({
   default: {
     fontFamily: FONTS.GowunDodum,
-    color: COLORS.white,
+    color: COLORS.newBlueText,
   },
 });

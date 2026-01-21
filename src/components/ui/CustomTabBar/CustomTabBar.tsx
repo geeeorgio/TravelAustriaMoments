@@ -12,7 +12,7 @@ import type { MainStackParamList } from 'src/types';
 
 const CustomTabBar = (props: BottomTabBarProps) => {
   return (
-    <CustomContainer extraStyle={styles.container} variant="red">
+    <CustomContainer extraStyle={styles.container} variant="blue">
       {props.state.routes.map((route, idx) => {
         const routeName = route.name as keyof MainStackParamList;
         const Icon = TAB_BAR_ICONS[routeName];

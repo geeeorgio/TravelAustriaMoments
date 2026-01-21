@@ -18,7 +18,7 @@ const TipsScreen = () => {
 
   return (
     <ImageBackground
-      source={TIPS_BG}
+      // source={TIPS_BG}
       resizeMode="stretch"
       style={styles.imageBackground}
     >
@@ -33,7 +33,7 @@ const TipsScreen = () => {
               'Get a random travel tip to inspire your journey and help you enjoy every moment.'}
           </CustomText>
           <CustomButton
-            variant="red"
+            variant="blue"
             onPress={handleGetRandomTip}
             extraStyle={styles.button}
           >

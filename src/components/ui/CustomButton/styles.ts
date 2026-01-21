@@ -19,7 +19,12 @@ export const styles = StyleSheet.create({
   black: {
     backgroundColor: COLORS.blackBckgd,
     borderWidth: wp(1),
-    borderColor: COLORS.redBorder,
+    borderColor: COLORS.newBlueCard3,
+  },
+  blue: {
+    backgroundColor: COLORS.newBlueCard3,
+    borderWidth: wp(1),
+    borderColor: COLORS.newBlueLightBorder,
   },
   overlay: {
     position: 'absolute',

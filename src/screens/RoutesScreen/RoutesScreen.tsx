@@ -145,7 +145,7 @@ const RoutesScreen = () => {
               </View>
             </View>
             <CustomButton
-              variant="red"
+              variant="blue"
               onPress={handleGetRandomLocation}
               extraStyle={styles.randomLocationButton}
             >

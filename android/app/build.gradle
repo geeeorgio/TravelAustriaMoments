@@ -79,7 +79,7 @@ android {
 
     namespace "com.travelaustriamoments"
     defaultConfig {
-        applicationId "com.travelaustriamoments"
+        applicationId "com.austriajourneyguide"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

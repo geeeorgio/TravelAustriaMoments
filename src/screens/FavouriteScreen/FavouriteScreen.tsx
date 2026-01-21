@@ -73,14 +73,14 @@ const FavouriteScreen = () => {
           </CustomText>
           <CustomButton
             onPress={handleSearchPlace}
-            variant="red"
+            variant="blue"
             extraStyle={styles.searchButton}
           >
             <CustomText extraStyle={styles.searchButtonText}>
               Search the place!
             </CustomText>
           </CustomButton>
-          <View style={styles.capibaraContainer}>
+          {/* <View style={styles.capibaraContainer}>
             <Image
               source={CAPIBARA}
               style={styles.capibaraImage}
@@ -99,7 +99,7 @@ const FavouriteScreen = () => {
                 />
               ))}
             </View>
-          </View>
+          </View> */}
         </View>
       )}
     </CustomScreenWrapper>

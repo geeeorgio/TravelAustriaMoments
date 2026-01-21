@@ -26,7 +26,7 @@ const PlaceScrollItem = ({
       <View style={styles.infoContainer}>
         <CustomText extraStyle={styles.infoText}>{location.id}</CustomText>
         <CustomButton
-          variant="red"
+          variant="blue"
           extraStyle={styles.infoButton}
           onPress={() => onPress(location)}
         >

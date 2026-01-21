@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { wp } from 'src/utils';
+import { hp, wp } from 'src/utils';
 
 export const styles = StyleSheet.create({
   background: {
@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
+    height: hp(250),
     alignSelf: 'center',
   },
 });

@@ -48,7 +48,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     padding: wp(16),
     alignItems: 'center',
-    backgroundColor: COLORS.lightDarkerBorder,
+    backgroundColor: COLORS.newBlueContainer,
     borderRadius: wp(32),
     overflow: 'hidden',
     borderWidth: wp(2),

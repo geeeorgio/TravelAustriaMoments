@@ -16,4 +16,7 @@ export const styles = StyleSheet.create({
   red: {
     backgroundColor: COLORS.red,
   },
+  blue: {
+    backgroundColor: COLORS.newBlue,
+  },
 });

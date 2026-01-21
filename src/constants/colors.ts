@@ -14,4 +14,12 @@ export const COLORS = {
   blackBckgd: '#262323',
   greyBckg: '#292323',
   redBorder: '#D62E18',
+
+  newBlue: '#1A2A3A',
+  newBlueCard: '#243447',
+  newBlueCard2: '#2F4156',
+  newBlueCard3: '#3A4F6A',
+  newBlueContainer: 'rgba(47, 65, 86, 0.8)',
+  newBlueLightBorder: 'rgba(255, 255, 255, 0.1)',
+  newBlueText: '#E1E2E5',
 };

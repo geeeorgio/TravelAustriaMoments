@@ -83,7 +83,7 @@ const RandomPlaceScreen = () => {
             </View>
 
             <CustomButton
-              variant="red"
+              variant="blue"
               onPress={handleGetAnotherPlace}
               extraStyle={styles.button}
             >
@@ -112,7 +112,7 @@ const RandomPlaceScreen = () => {
             </View>
 
             <CustomButton
-              variant="red"
+              variant="blue"
               onPress={handleGetRandomPlace}
               extraStyle={styles.button}
             >

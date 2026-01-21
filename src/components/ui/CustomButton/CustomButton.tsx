@@ -7,7 +7,7 @@ import { styles } from './styles';
 
 interface CustomButtonProps {
   children: ReactNode;
-  variant?: 'default' | 'red' | 'black';
+  variant?: 'default' | 'red' | 'black' | 'blue';
   onPress: () => void;
   extraStyle?: StyleProp<ViewStyle>;
   disabled?: boolean;
