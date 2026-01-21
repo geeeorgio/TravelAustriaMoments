@@ -4,19 +4,22 @@ import { useCallback } from 'react';
 import { useGameContext } from './useGameContext';
 
 import type {
-  HomeStackNavigationProp,
   LocationType,
+  MainStackNavigationProp,
   RouteType,
 } from 'src/types';
 
 export const usePlaceActions = () => {
-  const navigation = useNavigation<HomeStackNavigationProp>();
+  const navigation = useNavigation<MainStackNavigationProp>();
   const { addContextFavourites, removeFromContextFavourites, isInFavourites } =
     useGameContext();
 
   const handleOpenPress = useCallback(
     (item: LocationType | RouteType) => {
-      navigation.navigate('PlaceDetailsScreen', { item });
+      navigation.navigate('HomeStack', {
+        screen: 'PlaceDetailsScreen',
+        params: { item },
+      });
     },
     [navigation],
   );
